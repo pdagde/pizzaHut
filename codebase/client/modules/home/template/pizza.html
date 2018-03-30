@@ -1,0 +1,99 @@
+
+<div class="container" >
+	<section>
+		<div >
+			<div class="row">
+				<div class="col-md-12 col-sm-9">
+					<div class="panel panel-default" style="border: 2px solid #07a6aa">
+						<div class="panel-heading"
+							 style="border: #07a6aa ;height: 39px; color: #fff; background-color: #07a6aa;font-weight: bold;text-align: center">
+							Pizza Hut
+						</div>
+						
+							<table class="table table-bordered table-condensed table-striped" style="margin-top:2%;">
+								<div>
+									<div>
+										<tr>
+											<th style="background-color: #07a6aa;text-align: center;width:30%">PIZZA NAME
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:20%">PRICE
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:20%">DISCOUNT
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:10%">
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:10%">
+											</th>
+										</tr>
+									</div>
+
+									<tr style="background-color: aliceblue" ng-repeat = "pizza in allPizza">
+										
+										<td style="text-align: center">{{pizza.pizzaName}}</td>
+										<td style="text-align: center">₹ {{pizza.price}} </td>
+										<td style="text-align: center">{{pizza.discount}} %</td>
+										 <td style="text-align: center" ng-click="viwPizza(pizza)" data-toggle="modal" data-target="#EasyShare"><a>view</a> </td>
+										<td style="text-align: center" ng-click="orderPizza(pizza)"><a>order</a></td>
+									</tr>
+								</div>
+							</table>
+						
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+			<div class="modal fade" id="EasyShare" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content" style="margin-left: -153px;width: 935px;height: 200px">
+						
+
+                         <table class="table table-bordered table-condensed table-striped" style="margin-top:2%;">
+								<div>
+									<tr style="background-color: aliceblue" >
+										<td style="text-align: center">Pizza Name</td>
+										<td style="text-align: center">{{viewPizza.pizzaName}}</td>
+										<div></div>
+										<td style="text-align: center">price</td>
+										<td style="text-align: center">{{viewPizza.price}} ₹</td>
+
+									</tr>
+
+									<tr style="background-color: aliceblue" >
+										<td style="text-align: center">discount</td>
+										<td style="text-align: center">{{viewPizza.discount}}%</td>
+
+										<td style="text-align: center">BillPrice</td>
+										<td style="text-align: center">{{viewPizza.BillPrice}} ₹</td>
+
+									</tr>
+									
+									<button ng-click="orderPizza(viewPizza)" data-dismiss="modal">place order</button>
+								</div>
+							</table>
+
+						
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+	</section>
+
+
+ <!--  -->
+</div>
+
+
